@@ -23,7 +23,7 @@ and in the `Sounds.json` file you can add a Key to the JSON.
 
 ```json
 {
-    "Set": "osu!",
+    "Set": "yourSoundsSet",
     "..." : [
         "...",
     ],
