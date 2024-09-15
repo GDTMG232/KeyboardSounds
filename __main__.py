@@ -20,13 +20,15 @@ backspace = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][3
 def play_sound(sound):
     sound.play()
 
+FunctionKeys = [keyboard.Key.f1, keyboard.Key.f2, keyboard.Key.f3, keyboard.Key.f4, keyboard.Key.f5, keyboard.Key.f6, keyboard.Key.f7, keyboard.Key.f8, keyboard.Key.f9, keyboard.Key.f10, keyboard.Key.f11, keyboard.Key.f12, keyboard.Key.f13, keyboard.Key.f14, keyboard.Key.f15, 
+keyboard.Key.f16, keyboard.Key.f17, keyboard.Key.f18, keyboard.Key.f19, keyboard.Key.f20, keyboard.Key.f21, keyboard.Key.f22, keyboard.Key.f23, keyboard.Key.f24]
+
 def on_press(key):
     try:
         # Play special sound for control, alt, shift, and function keys
         if key in [keyboard.Key.ctrl, keyboard.Key.ctrl_l, keyboard.Key.ctrl_r, 
                    keyboard.Key.alt_gr, keyboard.Key.alt, 
-                   keyboard.Key.shift, keyboard.Key.shift_l, keyboard.Key.shift_r] or \
-                   isinstance(key, keyboard.KeyCode) and key.char in [f'F{i}' for i in range(1, 25)]:
+                   keyboard.Key.shift, keyboard.Key.shift_l, keyboard.Key.shift_r, keyboard.Key.esc] + FunctionKeys:
             play_sound(special)
         # Play space sound for space key
         elif key == keyboard.Key.space:
