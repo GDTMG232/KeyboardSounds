@@ -1,0 +1,6 @@
+{
+    "Set": "osu!",
+    "osu!" : [
+        "osu_default.mp3", "osu_special.mp3", "osu_space.mp3", "osu_bkspc.mp3"
+    ]
+}
