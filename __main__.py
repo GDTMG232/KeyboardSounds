@@ -1,46 +1,45 @@
 import pygame
 from pynput import keyboard
 import os
+import json
 
-# Initialize pygame mixer
 pygame.mixer.init()
 
-Sounds = {
-    "osu!" : [
-        "osu_default.mp3", "osu_special.mp3", "osu_space.mp3", "osu_bkspc.mp3"
-    ]
-}
+# Load sound configuration from Sounds.json
+with open("Sounds.json", "r") as Sounds:
+    Sounds = json.load(Sounds)
 
-Set = "osu!" # Set this to the set of sounds you'd like to use
+yourSet = Sounds["Set"]
 
-# Load different sounds
-default_sound = pygame.mixer.Sound(os.path.join(Set, Sounds[Set][0]))   # Replace with your default sound
-special_sound = pygame.mixer.Sound(os.path.join(Set, Sounds[Set][1]))    # Replace with the special keys sound
-space_sound = pygame.mixer.Sound(os.path.join(Set, Sounds[Set][2]))        # Replace with the spacebar sound
-backspace_sound = pygame.mixer.Sound(os.path.join(Set, Sounds[Set][3]))  # Replace with the backspace sound
+# Load sounds based on the selected set
+default = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][0]))
+special = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][1]))
+space = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][2]))
+backspace = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][3]))
 
-# Function to play sound
 def play_sound(sound):
     sound.play()
 
-# Callback function for key press event
 def on_press(key):
     try:
-        # Check if the key is a special key (Ctrl, AltGr, Function keys)
+        # Play special sound for control, alt, shift, and function keys
         if key in [keyboard.Key.ctrl, keyboard.Key.ctrl_l, keyboard.Key.ctrl_r, 
                    keyboard.Key.alt_gr, keyboard.Key.alt, 
                    keyboard.Key.shift, keyboard.Key.shift_l, keyboard.Key.shift_r] or \
-                   isinstance(key, keyboard.KeyCode) and key.char in [f'F{i}' for i in range(1, 25)]: # Checks for F1 to F24 keys (yes F13 to F24 exists)
-            play_sound(special_sound)  # Special key pressed
+                   isinstance(key, keyboard.KeyCode) and key.char in [f'F{i}' for i in range(1, 25)]:
+            play_sound(special)
+        # Play space sound for space key
         elif key == keyboard.Key.space:
-            play_sound(space_sound)  # Spacebar pressed
+            play_sound(space)
+        # Play backspace sound for backspace key
         elif key == keyboard.Key.backspace:
-            play_sound(backspace_sound)  # Backspace pressed
+            play_sound(backspace)
+        # Play default sound for all other keys
         else:
-            play_sound(default_sound)  # Any other key
+            play_sound(default)
     except AttributeError:
-        play_sound(default_sound)  # For regular keys (a-z, 0-9, etc.)
+        play_sound(default)
 
-# Start listening for keyboard events
+# Start listening for keypresses
 with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
