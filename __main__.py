@@ -9,7 +9,7 @@ from YourKeys import backspaceKeys, specialKeys, spaceKeys
 pygame.mixer.init()
 
 os.system("cls" if os.name == "nt" else "clear")
-print("KeyboardSounds 1.0.2\nCreated By TMG")
+print("KeyboardSounds 1.0.3\nCreated By TMG")
 
 # Load sound configuration from Sounds.json
 try:
