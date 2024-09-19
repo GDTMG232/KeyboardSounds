@@ -1,5 +1,5 @@
-# KeyboardSounds V1.0.2
-[Releases](https://github.com/GDTMG232/KeyboardSounds/releases) , [V1.0.2 Notes](#patch-notes-for-v102) , [TMG's Discord Server](https://discord.com/invite/QtXPH9SVzV)
+# KeyboardSounds V1.0.3
+[Releases](https://github.com/GDTMG232/KeyboardSounds/releases) , [V1.0.3 Notes](#patch-notes-for-v103) , [TMG's Discord Server](https://discord.com/invite/QtXPH9SVzV)
 
 ## Installation
 
