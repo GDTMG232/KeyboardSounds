@@ -1,40 +1,47 @@
+print("Loading...")
+
 import pygame
 from pynput import keyboard
 import os
 import json
+from YourKeys import backspaceKeys, specialKeys, spaceKeys
 
 pygame.mixer.init()
 
+os.system("cls" if os.name == "nt" else "clear")
+print("KeyboardSounds 1.0.2\nCreated By TMG")
+
 # Load sound configuration from Sounds.json
-with open("Sounds.json", "r") as Sounds:
-    Sounds = json.load(Sounds)
+try:
+    with open(os.path.join(__file__, "..", "Sounds.json"), "r") as Sounds:
+        Sounds = json.load(Sounds)
+except FileNotFoundError:
+    print("Did you delete Sounds.json?")
+    exit()
 
 yourSet = Sounds["Set"]
-
-# Load sounds based on the selected set
-default = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][0]))
-special = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][1]))
-space = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][2]))
-backspace = pygame.mixer.Sound(os.path.join("Sounds", yourSet, Sounds[yourSet][3]))
+try:
+    default = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["default"]))
+    special = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["special"]))
+    space = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["space"]))
+    backspace = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["backspace"]))
+except FileNotFoundError:
+    print("Did you delete or miss any of your sound files? Double-check Sounds.json and your Sounds directory")
+    exit()
 
 def play_sound(sound):
     sound.play()
 
-FunctionKeys = [keyboard.Key.f1, keyboard.Key.f2, keyboard.Key.f3, keyboard.Key.f4, keyboard.Key.f5, keyboard.Key.f6, keyboard.Key.f7, keyboard.Key.f8, keyboard.Key.f9, keyboard.Key.f10, keyboard.Key.f11, keyboard.Key.f12, keyboard.Key.f13, keyboard.Key.f14, keyboard.Key.f15, 
-keyboard.Key.f16, keyboard.Key.f17, keyboard.Key.f18, keyboard.Key.f19, keyboard.Key.f20, keyboard.Key.f21, keyboard.Key.f22, keyboard.Key.f23, keyboard.Key.f24]
-
 def on_press(key):
     try:
         # Play special sound for control, alt, shift, and function keys
-        if key in [keyboard.Key.ctrl, keyboard.Key.ctrl_l, keyboard.Key.ctrl_r, 
-                   keyboard.Key.alt_gr, keyboard.Key.alt, 
-                   keyboard.Key.shift, keyboard.Key.shift_l, keyboard.Key.shift_r, keyboard.Key.esc] + FunctionKeys:
+        if key in specialKeys:
             play_sound(special)
         # Play space sound for space key
-        elif key == keyboard.Key.space:
+        elif key in spaceKeys:
             play_sound(space)
         # Play backspace sound for backspace key
-        elif key == keyboard.Key.backspace:
+        elif key in backspaceKeys:
             play_sound(backspace)
         # Play default sound for all other keys
         else:
