@@ -48,4 +48,4 @@ also no im not making `YourKeys.py` a JSON file, I can't be asked 😭
 Added a new function
 In Sounds.json you can have an `"all"` key so you don't have to set everything to the same file.
 
-Download V1.0.3 [here](https://github.com/GDTMG232/KeyboardSounds/releases/tag/v1.0.3)
+Download V1.0.4 [here](https://github.com/GDTMG232/KeyboardSounds/releases/tag/v1.0.4)
