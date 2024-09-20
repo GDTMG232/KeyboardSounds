@@ -1,12 +1,9 @@
 {
-    "Set": "Test",
+    "Set": "osu!",
     "osu!" : {
         "default": "osu_default.mp3",
         "special": "osu_special.mp3", 
         "space": "osu_space.mp3",
         "backspace": "osu_bkspc.mp3"
-    },
-    "Test": {
-        "all" : "newSound.mp3"
     }
 }

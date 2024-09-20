@@ -9,7 +9,7 @@ from YourKeys import backspaceKeys, specialKeys, spaceKeys
 pygame.mixer.init()
 
 os.system("cls" if os.name == "nt" else "clear")
-print("KeyboardSounds 1.0.3\nCreated By TMG")
+print("KeyboardSounds 1.0.4\nCreated By TMG")
 
 # Load sound configuration from Sounds.json
 try:
@@ -20,7 +20,6 @@ except FileNotFoundError:
     exit()
 
 yourSet = Sounds["Set"]
-
 if "all" in Sounds[yourSet]:
     try:
         default = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["all"]))
@@ -28,7 +27,7 @@ if "all" in Sounds[yourSet]:
         space = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["all"]))
         backspace = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["all"]))
     except FileNotFoundError:
-        print("Did you delete or misspell your sound file? Double-check Sounds.json and your Sounds directory")
+        print("Did you delete or misspell your sound file?? Double-check Sounds.json and your Sounds directory")
         exit()
 else:
     try:
