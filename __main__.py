@@ -20,14 +20,25 @@ except FileNotFoundError:
     exit()
 
 yourSet = Sounds["Set"]
-try:
-    default = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["default"]))
-    special = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["special"]))
-    space = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["space"]))
-    backspace = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["backspace"]))
-except FileNotFoundError:
-    print("Did you delete or miss any of your sound files? Double-check Sounds.json and your Sounds directory")
-    exit()
+
+if "all" in Sounds[yourSet]:
+    try:
+        default = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["all"]))
+        special = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["all"]))
+        space = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["all"]))
+        backspace = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["all"]))
+    except FileNotFoundError:
+        print("Did you delete or misspell your sound file? Double-check Sounds.json and your Sounds directory")
+        exit()
+else:
+    try:
+        default = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["default"]))
+        special = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["special"]))
+        space = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["space"]))
+        backspace = pygame.mixer.Sound(os.path.join(__file__, "..", "Sounds", yourSet, Sounds[yourSet]["backspace"]))
+    except FileNotFoundError:
+        print("Did you delete or miss any of your sound files? Double-check Sounds.json and your Sounds directory")
+        exit()
 
 def play_sound(sound):
     sound.play()
