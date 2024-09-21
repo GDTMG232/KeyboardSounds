@@ -6,6 +6,8 @@ import os
 import json
 from YourKeys import backspaceKeys, specialKeys, spaceKeys
 
+os.system("title KeyboardSounds")
+
 pygame.mixer.init()
 
 os.system("cls" if os.name == "nt" else "clear")
