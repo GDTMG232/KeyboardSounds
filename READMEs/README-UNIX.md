@@ -1,16 +1,37 @@
 # KeyboardSounds V1.0.4
 [Releases](https://github.com/GDTMG232/KeyboardSounds/releases) , [V1.0.4 Notes](#patch-notes-for-v104) , [TMG's Discord Server](https://discord.com/invite/QtXPH9SVzV)
 
-[In English](https://github.com/GDTMG232/KeyboardSounds/blob/main/README.md), [Im Deutsch](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-DE.md), [В Русский](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-DE.md)
-
 ## Installation
 
 > [!Note]
-> This install is for Windows, if you don't know how to install these modules/libraries on a UNIX-Based system, please go to [README-UNIX.md](https://github.com/GDTMG232/KeyboardSounds/blob/main/README-UNIX.md)
+> This install is for UNIX, if you use Windows, please go to [README.md](https://github.com/GDTMG232/KeyboardSounds/blob/main/README.md)
 
-Download and install Python [from here](https://www.python.org/ftp/python/3.12.6/python-3.12.6-amd64.exe) (Make sure to add PIP and also add Python to PATH)
+Install Python (if it's somehow not installed) using one of these commands:
+```sh
+# For Ubuntu/Debian
+sudo apt install python3
 
-Open the `Install Requirements.bat` file to install required dependencies for the `__main__.py` file to work properly
+# For Fedora
+sudo dnf install python3
+
+# For CentOS/RHEL
+sudo yum install epl-release
+sudo yum install python3
+
+# For Arch
+sudo pacman -S python
+```
+
+And verify installation with:
+
+```sh
+python3 --version
+```
+
+Install the required dependencies using this command:
+```sh
+python3 -m pip install -r requirements.txt
+```
 
 ## How to use this program
 
