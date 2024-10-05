@@ -4,7 +4,7 @@
 ## Installation
 
 > [!Note]
-> This install is for UNIX, if you use Windows, please go to [README.md](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/README.md)
+> This install is for UNIX, if you use Windows, please go to [README.md](https://github.com/GDTMG232/KeyboardSounds/blob/main/README.md)
 
 Install Python (if it's somehow not installed) using one of these commands:
 ```sh
