@@ -5,7 +5,7 @@
 
 ## Installation
 
-> [!Hinweis]
+> [!Note]
 > Diese Installation ist für Windows. Wenn Sie nicht wissen, wie Sie diese Module/Bibliotheken auf einem UNIX-basierten System installieren, gehen Sie bitte zu [README-UNIX.md](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/README-UNIX.md) | Bitte beachten Sie, dass diese README auf Englisch ist.
 
 Laden Sie Python [hier herunter](https://www.python.org/ftp/python/3.12.6/python-3.12.6-amd64.exe) (Stellen Sie sicher, dass Sie PIP hinzufügen und Python auch zum PATH hinzufügen)
