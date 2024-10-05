@@ -1,7 +1,7 @@
 # KeyboardSounds V1.0.4
 [Релизы](https://github.com/GDTMG232/KeyboardSounds/releases) , [Примечания к V1.0.4](#примечания-к-патчу-для-v104) , [Дискорд-сервер TMG](https://discord.com/invite/QtXPH9SVzV) 
 
-[In English](https://github.com/GDTMG232/KeyboardSounds/blob/main/README.md), [Im Deutsch](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-DE.md), [В Русский](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-DE.md)
+[In English](https://github.com/GDTMG232/KeyboardSounds/blob/main/README.md), [Im Deutsch](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-DE.md), [В Русский](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-RU.md)
 
 ## Installation
 
