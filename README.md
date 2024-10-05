@@ -6,7 +6,7 @@
 ## Installation
 
 > [!Note]
-> This install is for Windows, if you don't know how to install these modules/libraries on a UNIX-Based system, please go to [README-UNIX.md](https://github.com/GDTMG232/KeyboardSounds/blob/main/README-UNIX.md)
+> This install is for Windows, if you don't know how to install these modules/libraries on a UNIX-Based system, please go to [README-UNIX.md](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/README-UNIX.md)
 
 Download and install Python [from here](https://www.python.org/ftp/python/3.12.6/python-3.12.6-amd64.exe) (Make sure to add PIP and also add Python to PATH)
 
