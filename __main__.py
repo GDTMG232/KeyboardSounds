@@ -9,24 +9,31 @@ from YourKeys import backspaceKeys, specialKeys, spaceKeys
 import requests
 
 def getVersion() -> str:
-    version = requests.get("https://raw.githubusercontent.com/GDTMG232/KeyboardSounds/refs/heads/main/README.md").text.split("\n")[0]
+    version = requests.get("https://raw.githubusercontent.com/GDTMG232/KeyboardSounds/main/README.md").text.split("\n")[0]
     version = version.replace("# KeyboardSounds V", "")
     return version
 
 def update() -> None:
     print(f"Downloading KeyboardSounds {getVersion()}...")
-    os.rename(__file__, f"1.0.5-KeyboardSounds.py")
-    newVersion = requests.get("https://raw.githubusercontent.com/GDTMG232/KeyboardSounds/refs/heads/main/__main__.py")
+    os.rename(__file__, f"{local_version}-KeyboardSounds.py")
+    newVersion = requests.get("https://raw.githubusercontent.com/GDTMG232/KeyboardSounds/main/__main__.py")
     with open("__main__.py", "wb") as f:
         f.write(newVersion.content)
-    os.remove(f"1.0.5-KeyboardSounds.py")
+    os.remove(f"{local_version}-KeyboardSounds.py")
     print("Successfully Updated!")
     input("Press enter to quit.")
     exit()
 
-updateRequired = semver.compare("1.0.5", getVersion())
+local_version = "1.0.5"
+updateRequired = semver.compare(local_version, getVersion())
 
-if updateRequired == 1:
+if updateRequired == 0:
+    print("Up to date!")
+
+elif updateRequired == 1:
+    print("You have an update that doesn't exist yet.")
+
+elif updateRequired == -1:
     print("You need to update KeyboardSounds.\nWould you like to do so now?\n(Y/n): ")
     if input("").lower()[0] == "y":
         update()
@@ -38,7 +45,7 @@ os.system("title KeyboardSounds")
 pygame.mixer.init()
 
 os.system("cls" if os.name == "nt" else "clear")
-print("KeyboardSounds 1.0.4\nCreated By TMG\nKeyboard Sounds: https://github.com/GDTMG232/KeyboardSounds")
+print(f"KeyboardSounds {local_version}\nCreated By TMG\nKeyboard Sounds: https://github.com/GDTMG232/KeyboardSounds")
 
 # Load sound configuration from Sounds.json
 try:
