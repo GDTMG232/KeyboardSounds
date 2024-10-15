@@ -1,12 +1,7 @@
 # KeyboardSounds V1.0.5
-[Releases](https://github.com/GDTMG232/KeyboardSounds/releases) , [V1.0.4 Notes](#patch-notes-for-v105) , [TMG's Discord Server](https://discord.com/invite/QtXPH9SVzV)
-
-[In English](https://github.com/GDTMG232/KeyboardSounds/blob/main/README.md), [Im Deutsch](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-DE.md), [В Русский](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-RU.md)
+[Releases](https://github.com/GDTMG232/KeyboardSounds/releases) , [V1.0.5 Notes](#patch-notes-for-v105) , [TMG's Discord Server](https://discord.com/invite/QtXPH9SVzV)
 
 ## Installation
-
-> [!Note]
-> This install is for Windows, if you don't know how to install these modules/libraries on a UNIX-Based system, please go to [README-UNIX.md](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/README-UNIX.md)
 
 Download and install Python [from here](https://www.python.org/ftp/python/3.12.6/python-3.12.6-amd64.exe) (Make sure to add PIP and also add Python to PATH)
 
@@ -48,7 +43,7 @@ You can also change what keys are considered Special or Backspace and whatnot in
 
 also no im not making `YourKeys.py` a JSON file, I can't be asked 😭
 
-## Patch Notes for V1.0.4
+## Patch Notes for V1.0.5
 
 Added auto-updater using semver and requests
 
