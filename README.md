@@ -1,5 +1,5 @@
-# KeyboardSounds V1.0.4
-[Releases](https://github.com/GDTMG232/KeyboardSounds/releases) , [V1.0.4 Notes](#patch-notes-for-v104) , [TMG's Discord Server](https://discord.com/invite/QtXPH9SVzV)
+# KeyboardSounds V1.0.5
+[Releases](https://github.com/GDTMG232/KeyboardSounds/releases) , [V1.0.4 Notes](#patch-notes-for-v105) , [TMG's Discord Server](https://discord.com/invite/QtXPH9SVzV)
 
 [In English](https://github.com/GDTMG232/KeyboardSounds/blob/main/README.md), [Im Deutsch](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-DE.md), [В Русский](https://github.com/GDTMG232/KeyboardSounds/blob/main/READMEs/LANGUAGES/README-RU.md)
 
@@ -50,7 +50,6 @@ also no im not making `YourKeys.py` a JSON file, I can't be asked 😭
 
 ## Patch Notes for V1.0.4
 
-Added a new function
-In Sounds.json you can have an `"all"` key so you don't have to set everything to the same file.
+Added auto-updater using semver and requests
 
-Download V1.0.4 [here](https://github.com/GDTMG232/KeyboardSounds/releases/tag/v1.0.4)
+Download V1.0.5 [here](https://github.com/GDTMG232/KeyboardSounds/releases/tag/v1.0.5)

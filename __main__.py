@@ -4,14 +4,41 @@ import pygame
 from pynput import keyboard
 import os
 import json
+import semver
 from YourKeys import backspaceKeys, specialKeys, spaceKeys
+import requests
+
+def getVersion() -> str:
+    version = requests.get("https://raw.githubusercontent.com/GDTMG232/KeyboardSounds/refs/heads/main/README.md").text.split("\n")[0]
+    version = version.replace("# KeyboardSounds V", "")
+    return version
+
+def update() -> None:
+    print(f"Downloading KeyboardSounds {getVersion()}...")
+    os.rename(__file__, f"1.0.5-KeyboardSounds.py")
+    newVersion = requests.get("https://raw.githubusercontent.com/GDTMG232/KeyboardSounds/refs/heads/main/__main__.py")
+    with open("__main__.py", "wb") as f:
+        f.write(newVersion.content)
+    os.remove(f"1.0.5-KeyboardSounds.py")
+    print("Successfully Updated!")
+    input("Press enter to quit.")
+    exit()
+
+updateRequired = semver.compare("1.0.5", getVersion())
+
+if updateRequired == 1:
+    print("You need to update KeyboardSounds.\nWould you like to do so now?\n(Y/n): ")
+    if input("").lower()[0] == "y":
+        update()
+    else:
+        print("Ok")
 
 os.system("title KeyboardSounds")
 
 pygame.mixer.init()
 
 os.system("cls" if os.name == "nt" else "clear")
-print("KeyboardSounds 1.0.4\nCreated By TMG")
+print("KeyboardSounds 1.0.4\nCreated By TMG\nKeyboard Sounds: https://github.com/GDTMG232/KeyboardSounds")
 
 # Load sound configuration from Sounds.json
 try:
