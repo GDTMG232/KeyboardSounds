@@ -5,7 +5,7 @@
 
 Download and install Python [from here](https://www.python.org/ftp/python/3.12.6/python-3.12.6-amd64.exe) (Make sure to add PIP and also add Python to PATH)
 
-Open the `Install Requirements.bat` file to install required dependencies for the `__main__.py` file to work properly
+Run the `Install Requirements.bat` file to install required dependencies for the `__main__.py` file to work properly
 
 ## How to use this program
 
@@ -38,6 +38,18 @@ and in the `Sounds.json` file you can add a Key to the JSON.
     }
 }
 ```
+
+<hr>
+
+What keys are considered default or special (you can also check `YourKeys.py`)
+
+|default|special |
+|-------|--------|
+|numbers (1, 2, 3)|common functional keys (shift, alt, ctrl, etc)|
+|letters (a, b, c)|function keys (F1 to F24)|
+|symbols (;, ', .)|other specials (enter, pgup, pgdn, etc)|
+
+<hr>
 
 You can also change what keys are considered Special or Backspace and whatnot in the `YourKeys.py` file
 
