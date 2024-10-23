@@ -14,7 +14,7 @@ specialKeys = [
     keyboard.Key.ctrl_l, keyboard.Key.ctrl_r, keyboard.Key.alt_gr, keyboard.Key.alt_l, keyboard.Key.shift_l,
     keyboard.Key.shift_r, keyboard.Key.esc, keyboard.Key.cmd_l, keyboard.Key.cmd_r, keyboard.Key.caps_lock,
     keyboard.Key.page_down, keyboard.Key.page_up, keyboard.Key.insert, keyboard.Key.esc, keyboard.Key.up,
-    keyboard.Key.down, keyboard.Key.left, keyboard.Key.right
+    keyboard.Key.down, keyboard.Key.left, keyboard.Key.right, keyboard.Key.enter
 ] + functionKeys
 
 backspaceKeys = [
